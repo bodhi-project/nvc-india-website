@@ -1,0 +1,199 @@
+/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------ Hide while loading
+/* ------------------------------------------------------------------------- */
+/*
+first things first, we need to hide everything,
+but bear in mind that this will only take effect
+once the loading script has taken effect.
+here we're hiding all content within
+the <html> once it has the class "wf-loading"
+*/
+html.lk-loading body {
+  opacity: 0;
+}
+
+/*
+just to make sure the <html>
+element shares the same dimensions as
+the browser window when loading
+(and not the potentially elongated page)
+*/
+html.lk-loading {
+  background-image: url('/loader.gif');
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/*
+add some transitional effects
+to reintroduce the content
+gradually once fonts are loaded
+*/
+html.lk-active.wf-active body,
+html.lk-active.wf-inactive body {
+  -webkit-transition: opacity 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+}
+
+body {
+  background: #ffffff !important;
+}
+
+html {
+  margin: 0;
+  font-family: 'adobe-garamond-pro', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !important;
+  font-size: 14px !important;
+  font-variant: tabular-nums;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #fff;
+}
+
+.ant-menu-vertical > .ant-menu-item,
+.ant-menu-sub.ant-menu-inline > .ant-menu-item {
+  line-height: 24px !important;
+  height: 24px !important;
+}
+
+.ant-menu-vertical > .ant-menu-item span,
+.ant-menu-sub.ant-menu-inline > .ant-menu-item span {
+  font-size: 112%;
+}
+
+.ant-menu-vertical > .ant-menu-item,
+.ant-menu-sub.ant-menu-inline > .ant-menu-item {
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  display: block !important;
+  width: auto !important;
+}
+
+.ant-menu-submenu-popup {
+  width: auto;
+}
+
+.ant-carousel {
+  margin: -1px !important;
+}
+
+.parent-circle {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 2px solid #e64e00;
+  position: relative;
+  margin-left: 62px;
+  margin-top: 42px;
+  margin-bottom: 122px;
+  margin-right: 82px;
+}
+
+.child-circle {
+  width: 125px;
+  height: 125px;
+  background-color: #ffc200;
+  border-radius: 50%;
+  position: absolute;
+  left: 62px;
+  top: 62px;
+  transition: all 300ms ease-in;
+  cursor: pointer;
+}
+
+.child-circle-highlight {
+  width: 6.25vw;
+  height: 6.25vw;
+  background-color: #ffc200;
+  border-radius: 50%;
+  transition: all 300ms ease-in;
+  cursor: pointer;
+  margin-right: 2px;
+  margin-bottom: 20px;
+}
+
+.child-circle.s {
+  width: 105px;
+  height: 105px;
+  // left: 62px;
+  // top: 62px;
+}
+
+.child-circle::after {
+  width: 125px;
+  text-align: center;
+  position: absolute;
+  text-shadow: 1px 1px white, 1px 0px white, 0px 1px white, 0px 0px white,
+    -1px -1px white, 0px -1px white, -1px 0px white;
+}
+
+.child-circle-highlight::after {
+  width: 6.25vw;
+  text-align: center;
+  position: absolute;
+  text-shadow: 1px 1px white, 1px 0px white, 0px 1px white, 0px 0px white,
+    -1px -1px white, 0px -1px white, -1px 0px white;
+}
+
+.child-circle.s::after {
+  width: 105px;
+}
+
+.child-circle p {
+  transition: all 200ms ease-in;
+  opacity: 0;
+  margin-top: -1px !important;
+  margin-left: -1px !important;
+  margin-bottom: 0px !important;
+  width: 123px;
+  height: 123px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00006f;
+  color: #ffffff;
+}
+
+.child-circle-highlight p {
+  transition: all 200ms ease-in;
+  opacity: 0;
+  margin-top: -1px !important;
+  margin-left: -1px !important;
+  margin-bottom: 0px !important;
+  width: 6.25vw;
+  height: 6.25vw;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00006f;
+  color: #ffffff;
+}
+
+.child-circle.s p {
+  width: 103px;
+  height: 103px;
+}
+
+.child-circle:hover p {
+  opacity: 1;
+}
+
+.child-circle-highlight:hover p {
+  opacity: 1;
+}
+
+.hover-action {
+  transition: all 300ms ease-in;
+}
+
+.hover-action:hover {
+  opacity: 0;
+}

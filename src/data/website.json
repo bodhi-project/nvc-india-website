@@ -1,0 +1,49 @@
+{
+  "websiteName": "NVC India",
+  "websiteCreator": "Joy Living Learning",
+  "websiteUrl": "https://www.nvc-india.org/",
+  "nakedWebsiteUrl": "https://www.nvc-india.org",
+  "devUrl": "http://localhost:8000/",
+  "nakedDevUrl": "http://localhost:8000",
+  "websiteKeywords": "GatsbyJS, React, Netlify",
+  "websiteDescription": "Official NVC Community in India",
+  "rssUrl": "/rss.xml",
+  "org": {
+    "name": "Joy Living Learning",
+    "legalName": "Joy Living Learning",
+    "url": "https://www.joylivinglearning.org/",
+    "logo": "/logo.png",
+    "foundingDate": "2017-01-01",
+    "founders": ["L'aura Joy"]
+  },
+  "orgLocation": {
+    "streetAddress": "House #1",
+    "addressLocality": "Center Field",
+    "addressRegion": "Auroville",
+    "postalCode": "605101",
+    "addressCountry": "India",
+    "locationName": "Auroville",
+    "locationUrl": "https://en.wikipedia.org/wiki/Auroville"
+  },
+  "orgContact": {
+    "email": "joylivinglearning@gmail.com",
+    "telephone": ["+914132622539"]
+  },
+  "orgSocialMediaProfiles": ["https://www.facebook.com/RestorativeAuroville/"],
+  "pathPrefix": "/",
+  "copyright": "Copyright © 2018 NVC India",
+  "googleAnalyticsID": "UA-109854711-11",
+  "googleAnalyticsViewID": "182889144",
+  "db": {
+    "dbName": "monolith",
+    "collections": ["posts"],
+    "server": {
+      "address": "ds249092.mlab.com",
+      "port": "49092"
+    },
+    "auth": {
+      "user": "mongobot",
+      "password": "srim1xx8"
+    }
+  }
+}

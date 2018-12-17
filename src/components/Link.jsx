@@ -1,0 +1,60 @@
+// ----------------------------------------------------------------------------
+// -------------------------------------------------------------------- Imports
+// ----------------------------------------------------------------------------
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
+import React from 'react'
+import PropTypes from 'prop-types'
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
+import startsWith from 'lodash/startsWith'
+import isUndefined from 'lodash/isUndefined'
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import { Link as GatsbyLink } from 'gatsby'
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
+import OutLink from '@bodhi-project/components/lib/OutLink'
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
+const { Fragment } = React
+
+// ----------------------------------------------------------------------------
+// ------------------------------------------------------------------ Component
+// ----------------------------------------------------------------------------
+/** Link */
+const Link = ({ to, children, ...props }) => {
+  const isOutLink = startsWith(to, 'http') || startsWith(to, 'https')
+  const isHashLink = startsWith(to, '#') || isUndefined(to)
+
+  return (
+    <Fragment>
+      {isOutLink === true ? (
+        <OutLink to={to} {...props}>
+          {children}
+        </OutLink>
+      ) : (
+        <Fragment>
+          {isHashLink === true ? (
+            <a href="#" {...props}>
+              {children}
+            </a>
+          ) : (
+            <GatsbyLink to={to} {...props}>
+              {children}
+            </GatsbyLink>
+          )}
+        </Fragment>
+      )}
+    </Fragment>
+  )
+}
+
+Link.propTypes = {
+  to: PropTypes.string,
+}
+
+// --------------------------------------------------------------------- Export
+export default Link
