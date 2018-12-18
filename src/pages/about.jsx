@@ -19,6 +19,8 @@ import React from 'react'
 // import Link from '../components/Link'
 import StandardPage from '../components/wrappers/StandardPage'
 
+import Block1 from '../components/about-blocks/Block1'
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 // const { Fragment } = React
 const pageData = {
@@ -43,7 +45,7 @@ const Page = props => (
     pageProps={props}
     headerTitle="About"
   >
-    About
+    <Block1 />
   </StandardPage>
 )
 
