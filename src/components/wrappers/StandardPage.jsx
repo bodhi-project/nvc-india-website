@@ -5,7 +5,6 @@
 import React from 'react'
 import { css } from 'glamor'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
@@ -23,11 +22,8 @@ import {
   BreadcrumbSchema,
 } from '@bodhi-project/seo'
 
-import InteractiveImage from '@bodhi-project/components/lib/InteractiveImage'
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Breadcrumb from 'antd/lib/breadcrumb'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
+import '@bodhi-project/antrd/lib/wonky/3.16.2/breadcrumb/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../Link'
@@ -42,50 +38,8 @@ import seoHelper from '../../methods/seoHelper'
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 const pageStyle = css({
-  '@media(min-width: 992px)': {
-    '& .resources': {
-      minHeight: 'calc(100vh - 100px)',
-      // paddingLeft: '6.25vw',
-      // paddingRight: '6.25vw',
-
-      '& .ant-tree li .ant-tree-node-content-wrapper': {
-        cursor: 'unset',
-      },
-
-      '& .ant-tree li .ant-tree-node-content-wrapper:hover': {
-        backgroundColor: 'unset',
-      },
-
-      '& .ant-tree-switcher': {
-        display: 'none',
-      },
-
-      '& .ant-tree.ant-tree-show-line li:not(:last-child):before': {
-        border: 'unset !important',
-        width: '0px !important',
-      },
-
-      '& .ant-tree > li.ant-tree-treenode-switcher-open > ul.ant-tree-child-tree': {
-        borderLeft: '1px solid #e64e00',
-        padding: 0,
-        paddingTop: 12,
-        marginLeft: 12,
-        paddingLeft: 12,
-
-        '& .ant-tree-child-tree': {
-          borderLeft: '1px solid #e64e00',
-          padding: 0,
-          marginTop: 6,
-          paddingTop: 12,
-          marginLeft: 12,
-          paddingLeft: 12,
-        },
-      },
-
-      '& li:last-child': {
-        marginBottom: '0px !important',
-      },
-    },
+  '& section': {
+    padding: 0,
   },
 })
 const pageStyles = pageStyle.toString()
@@ -95,7 +49,7 @@ const pageStyles = pageStyle.toString()
 // ----------------------------------------------------------------------------
 /** StandardPage */
 const StandardPage = props => {
-  const { pageData, className, children, pageProps, headerTitle } = props
+  const { pageData, className, children } = props
   const seoData = seoHelper(pageData)
   const {
     pageTitle,
@@ -105,10 +59,9 @@ const StandardPage = props => {
     webpageSchemaData,
     breadcrumbSchemaData,
   } = seoData
-  const { icons } = pageData
 
   return (
-    <Layout pageProps={pageProps} headerTitle={headerTitle}>
+    <Layout>
       {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
       <UpdateTitle title={pageTitle} />
       <GeneralMeta data={generalMetaData} />
@@ -117,8 +70,7 @@ const StandardPage = props => {
       <WebpageSchema data={webpageSchemaData} />
       <BreadcrumbSchema data={breadcrumbSchemaData} />
 
-      {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Content */}
-      <Page className={`${pageStyles} ${className}`}>{children}</Page>
+      {children}
     </Layout>
   )
 }

@@ -5,8 +5,6 @@
 import React from 'react'
 import { css } from 'glamor'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import { Page } from '@bodhi-project/semantic-webflow'
 import {
@@ -22,8 +20,6 @@ import {
   BreadcrumbSchema,
 } from '@bodhi-project/seo'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 // import Link from '../Link'
 import Layout from '../layout/Layout'
@@ -35,7 +31,11 @@ const { Fragment } = React
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
-const pageStyle = css({})
+const pageStyle = css({
+  '& section': {
+    padding: 0,
+  },
+})
 const pageStyles = pageStyle.toString()
 
 // ----------------------------------------------------------------------------
@@ -43,7 +43,7 @@ const pageStyles = pageStyle.toString()
 // ----------------------------------------------------------------------------
 /** StandardPage */
 const StandardPage = props => {
-  const { pageData, className, children, pageProps } = props
+  const { pageData, className, children } = props
   const seoData = seoHelper(pageData)
   const {
     pageTitle,
@@ -55,7 +55,7 @@ const StandardPage = props => {
   } = seoData
 
   return (
-    <Layout pageProps={pageProps}>
+    <Layout>
       {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
       <UpdateTitle title={pageTitle} />
       <GeneralMeta data={generalMetaData} />
@@ -65,7 +65,7 @@ const StandardPage = props => {
       <BreadcrumbSchema data={breadcrumbSchemaData} />
 
       {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Content */}
-      <Page className={`${pageStyles} ${className}`}>{children}</Page>
+      {children}
     </Layout>
   )
 }

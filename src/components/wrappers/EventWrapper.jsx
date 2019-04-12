@@ -7,7 +7,6 @@ import React from 'react'
 import { css } from 'glamor'
 import moment from 'moment'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
@@ -26,12 +25,10 @@ import {
   EventSchema,
 } from '@bodhi-project/seo'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Image from '@bodhi-project/components/lib/Image'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Breadcrumb from 'antd/lib/breadcrumb'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
+import '@bodhi-project/antrd/lib/wonky/3.16.2/breadcrumb/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../Link'
@@ -78,7 +75,6 @@ const EventWrapper = ({
     cover,
     prev,
     next,
-    pageProps,
   } = pageData
   const eventSchemaData = {
     name: title,
@@ -117,7 +113,7 @@ const EventWrapper = ({
   } = seoData
 
   return (
-    <Layout pageProps={pageProps}>
+    <Layout>
       {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
       <UpdateTitle title={pageTitle} />
       <GeneralMeta data={generalMetaData} />

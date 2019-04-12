@@ -1,11 +1,52 @@
+// ----------------------------------------------------------------------------
+// -------------------------------------------------------------------- Imports
+// ----------------------------------------------------------------------------
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
-import Layout from '../components/layout/Layout'
+// import PropTypes from 'prop-types'
+// import { css } from "glamor";
 
-const NotFoundPage = () => (
-  <Layout>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
+// import isUndefined from 'lodash/isUndefined'
+// import map from 'lodash/map'
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import Division from '@bodhi-project/components/lib/Division'
+import '@bodhi-project/antrd/lib/wonky/3.16.2/row/style/css'
+import '@bodhi-project/antrd/lib/wonky/3.16.2/col/style/css'
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
+// import Link from '../components/Link'
+import StandardPage from '../components/wrappers/StandardPage'
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
+// const { Fragment } = React
+const pageData = {
+  pageTitle: '404',
+  nakedPageSlug: '',
+  pageAbstract: 'Page abstract.',
+  breadcrumbs: [{ title: 'Home', to: '/' }],
+}
+
+// ----------------------------------------------------------------------------
+// --------------------------------------------------------------------- Styles
+// ----------------------------------------------------------------------------
+
+// ----------------------------------------------------------------------------
+// ------------------------------------------------------------------ Component
+// ----------------------------------------------------------------------------
+/** Page */
+const Page = () => (
+  <StandardPage className="" pageData={pageData}>
+    <Division bigGolden>
+      <div>
+        <h1>Page not found!</h1>
+      </div>
+      <div>2</div>
+    </Division>
+  </StandardPage>
 )
 
-export default NotFoundPage
+// ----------------------------------------------------------------------------
+// --------------------------------------------------------------------- Export
+// ----------------------------------------------------------------------------
+export default Page

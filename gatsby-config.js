@@ -38,20 +38,23 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-mongodb`, // https://www.gatsbyjs.org/packages/gatsby-source-mongodb/?=gatsby-source-mongodb
+      resolve: `gatsby-plugin-offline`, // https://www.gatsbyjs.org/packages/gatsby-plugin-offline
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
       options: {
-        dbName: data.db.dbName,
-        collection: data.db.collections,
-        server: {
-          address: data.db.server.address,
-          port: data.db.server.port,
-        },
-        auth: {
-          user: data.db.auth.user,
-          password: data.db.auth.password,
-        },
+        path: `${__dirname}/src/images`,
+        name: 'images',
       },
     },
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    // {
+    //   resolve: `gatsby-source-mongodb`, // https://www.gatsbyjs.org/packages/gatsby-source-mongodb/?=gatsby-source-mongodb
+    //   options: {
+    //     ...data.db,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-react-helmet`, // https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/?=gatsby-plugin-react-helmet
     },
@@ -166,21 +169,18 @@ module.exports = {
         },
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-offline`, // https://www.gatsbyjs.org/packages/gatsby-plugin-offline
-    // },
     {
       resolve: `gatsby-plugin-canonical-urls`, // https://www.gatsbyjs.org/packages/gatsby-plugin-canonical-urls
       options: {
         siteUrl,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-sri`, // https://www.gatsbyjs.org/packages/gatsby-plugin-sri
-    //   options: {
-    //     hash: 'sha512',
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-sri`, // https://www.gatsbyjs.org/packages/gatsby-plugin-sri
+      options: {
+        hash: 'sha512',
+      },
+    },
     {
       resolve: `gatsby-plugin-zopfli`, // https://www.gatsbyjs.org/packages/gatsby-plugin-zopfli
     },

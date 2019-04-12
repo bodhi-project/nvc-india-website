@@ -1,49 +1,61 @@
 {
-  "websiteName": "NVC India",
-  "websiteCreator": "Joy Living Learning",
-  "websiteUrl": "https://www.nvc-india.org/",
-  "nakedWebsiteUrl": "https://www.nvc-india.org",
+  "websiteName": "Launch Kit",
+  "websiteCreator": "Bodhi Project",
+  "websiteUrl": "https://starter.bodhiproject.org/",
+  "nakedWebsiteUrl": "https://starter.bodhiproject.org",
   "devUrl": "http://localhost:8000/",
   "nakedDevUrl": "http://localhost:8000",
   "websiteKeywords": "GatsbyJS, React, Netlify",
-  "websiteDescription": "Official NVC Community in India",
+  "websiteDescription": "Launch Kit is an opionated GatsbyJS Starter kit.",
   "rssUrl": "/rss.xml",
   "org": {
-    "name": "Joy Living Learning",
-    "legalName": "Joy Living Learning",
-    "url": "https://www.joylivinglearning.org/",
+    "name": "Bodhi Project",
+    "legalName": "Bodhi Project Inc.",
+    "url": "https://www.bodhiproject.org",
     "logo": "/logo.png",
     "foundingDate": "2017-01-01",
-    "founders": ["L'aura Joy"]
+    "founders": ["Pranav Kumar", "Brijesh Kumar", "Mangal Varshney"]
   },
   "orgLocation": {
-    "streetAddress": "House #1",
-    "addressLocality": "Center Field",
-    "addressRegion": "Auroville",
-    "postalCode": "605101",
+    "streetAddress": "Street #123",
+    "addressLocality": "Kotagiri",
+    "addressRegion": "Tamil Nadu",
+    "postalCode": "643217",
     "addressCountry": "India",
-    "locationName": "Auroville",
-    "locationUrl": "https://en.wikipedia.org/wiki/Auroville"
+    "locationName": "Kotagiri",
+    "locationUrl": "https://en.wikipedia.org/wiki/Kotagiri"
   },
   "orgContact": {
-    "email": "joylivinglearning@gmail.com",
-    "telephone": ["+914132622539"]
+    "email": "hello@bodhiproject.org",
+    "telephone": ["na"]
   },
-  "orgSocialMediaProfiles": ["https://www.facebook.com/RestorativeAuroville/"],
+  "orgSocialMediaProfiles": [
+    "http://instagram.com/bodhisystems",
+    "https://twitter.com/_dmi_systems"
+  ],
   "pathPrefix": "/",
-  "copyright": "Copyright © 2018 NVC India",
-  "googleAnalyticsID": "UA-109854711-11",
+  "copyright": "Copyright © 2018 Bodhi Project",
+  "googleAnalyticsID": "UA-109854711-9",
   "googleAnalyticsViewID": "182889144",
+  "app": {
+    "projectContext": "QKBp9oMLbyHKY63uf"
+  },
   "db": {
-    "dbName": "monolith",
-    "collections": ["posts"],
+    "dbName": "db01",
+    "collection": ["blog"],
     "server": {
-      "address": "ds249092.mlab.com",
-      "port": "49092"
+      "address": "cluster0-shard-00-00-wjndh.mongodb.net",
+      "port": 27017
     },
     "auth": {
-      "user": "mongobot",
-      "password": "srim1xx8"
+      "user": "reader-bot",
+      "password": "TuDtYPomUNhVUysE"
+    },
+    "extraParams": {
+      "ssl": true,
+      "replicaSet": "Cluster0-shard-0",
+      "authSource": "admin",
+      "retryWrites": true
     }
   }
 }

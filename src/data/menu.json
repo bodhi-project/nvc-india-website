@@ -1,4 +1,7 @@
 [
   { "title": "About", "link": "/about" },
-  { "title": "Contact", "link": "/contact" }
+  { "title": "Certified Trainers", "link": "/certified-trainers" },
+  { "title": "Certification Weave", "link": "/certification-weave" },
+  { "title": "Events", "link": "/events" },
+  { "title": "Contact Us", "link": "/contact-us" }
 ]

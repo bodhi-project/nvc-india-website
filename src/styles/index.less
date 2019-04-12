@@ -41,14 +41,12 @@ html.lk-active.wf-inactive body {
 }
 
 body {
-  background: #ffffff !important;
+  background: transparent !important;
 }
 
 html {
+  background: #fff !important;
   margin: 0;
-  font-family: 'adobe-garamond-pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !important;
   font-size: 14px !important;
   font-variant: tabular-nums;
   line-height: 1.5;
@@ -79,121 +77,16 @@ html {
   width: auto;
 }
 
-.ant-carousel {
-  margin: -1px !important;
+.parent-carrier {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .parent-circle {
-  width: 250px;
-  height: 250px;
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
-  border: 2px solid #e64e00;
   position: relative;
-  margin-left: 62px;
-  margin-top: 42px;
-  margin-bottom: 122px;
-  margin-right: 82px;
 }
 
-.child-circle {
-  width: 125px;
-  height: 125px;
-  background-color: #ffc200;
-  border-radius: 50%;
-  position: absolute;
-  left: 62px;
-  top: 62px;
-  transition: all 300ms ease-in;
-  cursor: pointer;
-}
-
-.child-circle-highlight {
-  width: 6.25vw;
-  height: 6.25vw;
-  background-color: #ffc200;
-  border-radius: 50%;
-  transition: all 300ms ease-in;
-  cursor: pointer;
-  margin-right: 2px;
-  margin-bottom: 20px;
-}
-
-.child-circle.s {
-  width: 105px;
-  height: 105px;
-  // left: 62px;
-  // top: 62px;
-}
-
-.child-circle::after {
-  width: 125px;
-  text-align: center;
-  position: absolute;
-  text-shadow: 1px 1px white, 1px 0px white, 0px 1px white, 0px 0px white,
-    -1px -1px white, 0px -1px white, -1px 0px white;
-}
-
-.child-circle-highlight::after {
-  width: 6.25vw;
-  text-align: center;
-  position: absolute;
-  text-shadow: 1px 1px white, 1px 0px white, 0px 1px white, 0px 0px white,
-    -1px -1px white, 0px -1px white, -1px 0px white;
-}
-
-.child-circle.s::after {
-  width: 105px;
-}
-
-.child-circle p {
-  transition: all 200ms ease-in;
-  opacity: 0;
-  margin-top: -1px !important;
-  margin-left: -1px !important;
-  margin-bottom: 0px !important;
-  width: 123px;
-  height: 123px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #00006f;
-  color: #ffffff;
-}
-
-.child-circle-highlight p {
-  transition: all 200ms ease-in;
-  opacity: 0;
-  margin-top: -1px !important;
-  margin-left: -1px !important;
-  margin-bottom: 0px !important;
-  width: 6.25vw;
-  height: 6.25vw;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #00006f;
-  color: #ffffff;
-}
-
-.child-circle.s p {
-  width: 103px;
-  height: 103px;
-}
-
-.child-circle:hover p {
-  opacity: 1;
-}
-
-.child-circle-highlight:hover p {
-  opacity: 1;
-}
-
-.hover-action {
-  transition: all 300ms ease-in;
-}
-
-.hover-action:hover {
-  opacity: 0;
-}

@@ -7,7 +7,6 @@ import React from 'react'
 import { css } from 'glamor'
 import moment from 'moment'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Lodash
 import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
@@ -26,12 +25,10 @@ import {
   BlogPostSchema,
 } from '@bodhi-project/seo'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ @bodhi-project/components
 import Image from '@bodhi-project/components/lib/Image'
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AntD Components
 import Breadcrumb from 'antd/lib/breadcrumb'
-import '@bodhi-project/antrd/lib/restorative-auroville/3.10.0/breadcrumb/style/css'
+import '@bodhi-project/antrd/lib/wonky/3.16.2/breadcrumb/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../Link'
@@ -70,7 +67,6 @@ const BlogPostWrapper = ({ pageData, className, children, ...props }) => {
     cover,
     prev,
     next,
-    pageProps,
   } = pageData
   const blogPageSchemaData = {
     headline: title,
@@ -98,7 +94,7 @@ const BlogPostWrapper = ({ pageData, className, children, ...props }) => {
   } = seoData
 
   return (
-    <Layout pageProps={pageProps}>
+    <Layout>
       {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
       <UpdateTitle title={pageTitle} />
       <GeneralMeta data={generalMetaData} />
