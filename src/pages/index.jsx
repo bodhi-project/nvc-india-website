@@ -272,6 +272,7 @@ class Page extends React.Component {
             position: 'relative',
             marginBottom: 20,
           }}
+          className="desktop-only"
         >
           <Img fluid={this.props.data.banner.childImageSharp.fluid} />
           <div
