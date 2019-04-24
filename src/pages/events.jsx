@@ -154,7 +154,7 @@ const Page = props => {
   ]
 
   return (
-    <StandardPage className="" pageData={pageData}>
+    <StandardPage className="" pageData={pageData} {...props}>
       <Division bigGolden>
         <div>
           <h1>Events</h1>

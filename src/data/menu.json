@@ -1,7 +1,16 @@
 [
-  { "title": "About", "link": "/about" },
-  { "title": "Certified Trainers", "link": "/certified-trainers" },
-  { "title": "Certification Weave", "link": "/certification-weave" },
-  { "title": "Events", "link": "/events" },
-  { "title": "Contact Us", "link": "/contact-us" }
+  { "title": "Homepage", "link": "/", "mobileOnly": true },
+  { "title": "About", "link": "/about", "mobileOnly": false },
+  {
+    "title": "Certified Trainers",
+    "link": "/certified-trainers",
+    "mobileOnly": false
+  },
+  {
+    "title": "Certification Weave",
+    "link": "/certification-weave",
+    "mobileOnly": false
+  },
+  { "title": "Events", "link": "/events", "mobileOnly": false },
+  { "title": "Contact Us", "link": "/contact-us", "mobileOnly": false }
 ]

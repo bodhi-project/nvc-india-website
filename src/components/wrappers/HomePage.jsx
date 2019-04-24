@@ -43,7 +43,7 @@ const pageStyles = pageStyle.toString()
 // ----------------------------------------------------------------------------
 /** StandardPage */
 const StandardPage = props => {
-  const { pageData, className, children } = props
+  const { pageData, className = '', children } = props
   const seoData = seoHelper(pageData)
   const {
     pageTitle,
@@ -55,7 +55,7 @@ const StandardPage = props => {
   } = seoData
 
   return (
-    <Layout>
+    <Layout className={className} {...props}>
       {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
       <UpdateTitle title={pageTitle} />
       <GeneralMeta data={generalMetaData} />

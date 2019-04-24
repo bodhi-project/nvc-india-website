@@ -11,6 +11,7 @@ import { graphql } from 'gatsby'
 import isUndefined from 'lodash/isUndefined'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
+import MediaQuery from 'react-responsive'
 import Typekit from 'react-typekit'
 import typefn from '@bodhi-project/typography/lib/methods/type'
 
@@ -26,14 +27,9 @@ import container from '@bodhi-project/components/lib/methods/container'
 import '../../styles/index.less'
 import indexImage from '../../assets/launch.jpg'
 import data from '../../data/website.json'
-import menu from '../../data/menu.json'
-import logo from '../../assets/logo.png'
 
-import WebsiteTitle from './WebsiteTitle'
-import DesktopNav from './DesktopNav'
-import DesktopFooter from './DesktopFooter'
-import MobileNav from './MobileNav'
-import MobileFooter from './MobileFooter'
+import Header from './Header'
+import Footer from './Footer'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
 export const defaultImage = graphql`
@@ -93,31 +89,11 @@ const pageStyle = css({
     '& header': {
       flexGrow: 0,
       flexBasis: 0,
-
-      '& > div': {
-        borderBottom: '2px solid #285BA1',
-        borderLeft: '2px solid #285BA1',
-        borderRight: '2px solid #285BA1',
-        boxShadow: '2px 2px #e2620b',
-        borderRadius: 5,
-        paddingLeft: '1rem',
-        paddingRight: '1rem',
-      },
     },
 
     '& footer': {
       flexGrow: 0,
       flexBasis: 0,
-
-      '& > p': {
-        borderTop: '2px solid #285BA1',
-        borderLeft: '2px solid #285BA1',
-        borderRight: '2px solid #285BA1',
-        boxShadow: '2px 2px #e2620b',
-        borderRadius: 5,
-        paddingLeft: '1rem',
-        paddingRight: '1rem',
-      },
     },
 
     '& main': {
@@ -125,6 +101,10 @@ const pageStyle = css({
       paddingBottom: '1rem',
       flexGrow: 1,
       flexBasis: 0,
+
+      '& .copy': {
+        maxWidth: '60rem',
+      },
     },
   },
 
@@ -237,30 +217,33 @@ class Layout extends React.Component {
 
   /** standard renderer */
   render() {
-    const { children } = this.props
+    const { children, className } = this.props
     const { typeClass } = this.state
     const threeQuartersBlock = container({ threeQuarters: true, block: true })
+    const classNameX = `${typeClass} ${pageStyles} ${className}`
 
     return (
-      <div className={`${typeClass} ${pageStyles}`} id="layout" style={{}}>
-        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
-        <InitializeMeta data={{ titleTemplate: '%s | Web Starter' }} />
-        <UpdateTitle title="Loading..." />
-        <WebsiteSchema data={websiteSchemaData} />
-        <OrganisationSchema data={organisationSchemaData} />
-        <header>
-          <DesktopNav menu={menu} {...this.props} />
-          {/* <MobileNav /> */}
-        </header>
-        <main id="content" role="main" className={threeQuartersBlock}>
-          {children}
-        </main>
-        <footer>
-          <DesktopFooter />
-          {/* <MobileFooter /> */}
-        </footer>
-        <Typekit kitId="pom2jme" />
-      </div>
+      <MediaQuery
+        minWidth={992}
+        // values={{ width: 1440, height: 900, type: 'screen' }}
+      >
+        {matches => (
+          <div className={classNameX} id="layout">
+            <InitializeMeta
+              data={{ titleTemplate: `%s | ${data.websiteName}` }}
+            />
+            <UpdateTitle title="Official NVC Community in India" />
+            <WebsiteSchema data={websiteSchemaData} />
+            <OrganisationSchema data={organisationSchemaData} />
+            <Header isDesktop={matches} typeClass={typeClass} {...this.props} />
+            <main id="content" role="main" className={threeQuartersBlock}>
+              {children}
+            </main>
+            <Footer />
+            <Typekit kitId="pom2jme" />
+          </div>
+        )}
+      </MediaQuery>
     )
   }
 }

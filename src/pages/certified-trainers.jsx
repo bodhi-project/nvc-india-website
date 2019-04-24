@@ -50,7 +50,7 @@ export const query = graphql`
 // ----------------------------------------------------------------------------
 /** Page */
 const Page = props => (
-  <StandardPage className="" pageData={pageData}>
+  <StandardPage className="" pageData={pageData} {...props}>
     <Division bigGolden>
       <div>
         <h1>Certified Trainers</h1>

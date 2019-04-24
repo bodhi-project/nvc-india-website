@@ -61,7 +61,7 @@ const StandardPage = props => {
   } = seoData
 
   return (
-    <Layout>
+    <Layout {...props}>
       {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SEO */}
       <UpdateTitle title={pageTitle} />
       <GeneralMeta data={generalMetaData} />

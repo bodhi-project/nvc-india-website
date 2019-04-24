@@ -35,8 +35,8 @@ const pageData = {
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
-const Page = () => (
-  <StandardPage className="" pageData={pageData}>
+const Page = props => (
+  <StandardPage className="" pageData={pageData} {...props}>
     <Division bigGolden>
       <div>
         <h1>About</h1>
