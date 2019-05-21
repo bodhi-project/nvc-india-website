@@ -102,7 +102,7 @@ const Page = props => (
             Weave...
           </strong>
         </p>
-        <h2 className="mask-h3">A Certification Candidate Shares…</h2>
+        <h2 className="mask-h3">A Certification Candidate shares…</h2>
         <div style={{ maxWidth: 600 }}>
           <Video url="https://www.youtube.com/watch?v=YoGKAJqMCBk" />
         </div>

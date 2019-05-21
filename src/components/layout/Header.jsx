@@ -15,7 +15,7 @@ import '@bodhi-project/antrd/lib/wonky/3.16.2/menu/style/css'
 
 import container from '@bodhi-project/components/lib/methods/container'
 
-// import Image from '@bodhi-project/components/lib/Image'
+import Image from '@bodhi-project/components/lib/Image'
 
 import Drawer from 'antd/lib/drawer'
 import '@bodhi-project/antrd/lib/wonky/3.16.2/drawer/style/css'
@@ -29,7 +29,7 @@ import '@bodhi-project/antrd/lib/wonky/3.16.2/icon/style/css'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 import Link from '../Link'
 
-// import logo from '../../assets/logo.png'
+import logo from '../../assets/logo.png'
 
 import keygen from '../../methods/keygen'
 
@@ -279,8 +279,21 @@ class Header extends React.Component {
         {isDesktop === true && (
           <div className="desktop-header">
             <Link to="/" title="Home">
-              <h1 className="shadow" data-shadow="NVC-India">
-                <span>NVC-India</span>
+              <h1
+                className="shadow"
+                data-shadow="NVC-India"
+                style={{ display: 'flex', alignItems: 'center' }}
+              >
+                <Image
+                  src={logo}
+                  style={{
+                    width: 60,
+                    height: 60,
+                    background: 'transparent',
+                    border: 'unset',
+                  }}
+                />
+                <span style={{ paddingLeft: 6 }}>NVC-India</span>
               </h1>
             </Link>
             <nav>
@@ -349,8 +362,21 @@ class Header extends React.Component {
                   border: 'unset',
                 }}
               >
-                <h1 className="shadow" data-shadow="NVC India">
-                  <span>NVC India</span>
+                <h1
+                  className="shadow"
+                  data-shadow="NVC-India"
+                  style={{ display: 'flex', alignItems: 'center' }}
+                >
+                  <Image
+                    src={logo}
+                    style={{
+                      width: 45,
+                      height: 45,
+                      background: 'transparent',
+                      border: 'unset',
+                    }}
+                  />
+                  <span style={{ paddingLeft: 5 }}>NVC-India</span>
                 </h1>
               </Link>
               <div style={{ paddingTop: 14 }}>

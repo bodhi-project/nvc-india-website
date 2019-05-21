@@ -4,7 +4,7 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 // import PropTypes from 'prop-types'
-// import { css } from "glamor";
+import { css } from 'glamor'
 import { graphql } from 'gatsby'
 
 // import isUndefined from 'lodash/isUndefined'
@@ -78,33 +78,42 @@ export const query = graphql`
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
+const style = css({
+  '& .responsive-image': {
+    '@media(max-width: 992px)': {
+      maxWidth: 200,
+    },
+  },
+
+  '& .move-up': {
+    '@media(min-width: 992px)': {
+      marginTop: -10,
+    },
+  },
+})
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
 // ----------------------------------------------------------------------------
 /** Page */
 const Page = props => (
-  <StandardPage className="" pageData={pageData} {...props}>
+  <StandardPage className={style} pageData={pageData} {...props}>
     <Division bigGolden>
       <div className="copy">
         <h1>CNVC-Certified Trainers in India</h1>
         <p>
-          Alice's Adventures in Wonderland (commonly shortened to Alice in
-          Wonderland) is an 1865 novel written by English author Charles
-          Lutwidge Dodgson under the pseudonym Lewis Carroll. It tells of a girl
-          named Alice falling through a rabbit hole into a fantasy world
-          populated by peculiar, anthropomorphic creatures. The tale plays with
-          logic, giving the story lasting popularity with adults as well as with
-          children.
+          At present, we have four CNVC Certified Trainers, and many more
+          Certification Candidates preparing themselves to become Trainers.
         </p>
         <Division threeQuartersAlt style={{ marginBottom: 20 }}>
           <div>
-            <Img fluid={props.data.laura.childImageSharp.fluid} />
+            <Img
+              fluid={props.data.laura.childImageSharp.fluid}
+              className="responsive-image"
+            />
           </div>
           <div>
-            <h2 className="mask-h3" style={{ marginTop: -10 }}>
-              L'aura Joy
-            </h2>
+            <h2 className="mask-h3 move-up">L'aura Joy</h2>
             <p>
               L’aura Joy is a Certified Trainer in Nonviolent Communication
               (CNVC, USA), and since 2007 she has been working in the fields of
@@ -135,27 +144,21 @@ const Page = props => (
         <Division threeQuartersAlt style={{ marginBottom: 20 }}>
           <div>&nbsp;</div>
           <div>
-            <h2 className="mask-h3" style={{ marginTop: -10 }}>
-              Ranjitha Jeurkar
-            </h2>
+            <h2 className="mask-h3 move-up">Ranjitha Jeurkar</h2>
             <p>Coming soon…</p>
           </div>
         </Division>
         <Division threeQuartersAlt style={{ marginBottom: 20 }}>
           <div>&nbsp;</div>
           <div>
-            <h2 className="mask-h3" style={{ marginTop: -10 }}>
-              Stefan Gebert
-            </h2>
+            <h2 className="mask-h3 move-up">Stefan Gebert</h2>
             <p>Coming soon…</p>
           </div>
         </Division>
         <Division threeQuartersAlt style={{ marginBottom: 20 }}>
           <div>&nbsp;</div>
           <div>
-            <h2 className="mask-h3" style={{ marginTop: -10 }}>
-              Sudha Shankar
-            </h2>
+            <h2 className="mask-h3 move-up">Sudha Shankar</h2>
             <p>Coming soon…</p>
           </div>
         </Division>

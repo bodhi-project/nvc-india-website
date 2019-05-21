@@ -31,6 +31,7 @@ import Header from './Header'
 import Footer from './Footer'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
+const { Fragment } = React
 export const defaultImage = graphql`
   fragment defaultImage on File {
     childImageSharp {
@@ -96,8 +97,6 @@ const style = css({
     },
 
     '& main': {
-      paddingTop: '1rem',
-      paddingBottom: '1rem',
       flexGrow: 1,
       flexBasis: 0,
       position: 'relative',
@@ -105,6 +104,11 @@ const style = css({
 
       '& .copy': {
         maxWidth: '60rem',
+      },
+
+      '&.not-home': {
+        paddingTop: '1rem',
+        paddingBottom: '1rem',
       },
     },
   },
@@ -171,11 +175,17 @@ const style = css({
       backgroundSize: '0.06em 0.06em',
       WebkitBackgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
+
+      '@media(max-width: 992px)': {
+        paddingLeft: 50,
+      },
+      paddingLeft: 66,
     },
   },
 }).toString()
 
 const threeQuartersBlock = container({ threeQuarters: true, block: true })
+const bleedBlock = container({ bleed: true, block: true })
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -197,15 +207,15 @@ class Layout extends React.Component {
     })
 
     this.state = {
-      defaultMediaQueryValues: isUndefined(window)
-        ? { width: 1440, height: 900 }
-        : {},
       typeClass,
+      client: false,
     }
   }
 
   /** after mount */
   componentDidMount() {
+    this.setState({ client: true })
+
     if (!isUndefined(document)) {
       const htmlElement = document.documentElement
       if (htmlElement.classList.contains('lk-loading')) {
@@ -220,36 +230,92 @@ class Layout extends React.Component {
   /** on mount */
   componentDidUpdate() {
     if (!isUndefined(window)) {
-      const element = document.getElementById('content')
-      element.scrollTop = 0
+      if (this.state.client === true) {
+        const element = document.getElementById('layout')
+        element.scrollTop = 0
+      }
     }
   }
 
   /** standard renderer */
   render() {
-    const { children, className } = this.props
-    const { typeClass, defaultMediaQueryValues } = this.state
+    const {
+      children,
+      className,
+      location: { pathname },
+    } = this.props
+    const { typeClass, client } = this.state
     const classNameX = `${typeClass} ${style} ${className}`
 
     return (
-      <MediaQuery minWidth={992} values={defaultMediaQueryValues}>
-        {matches => (
-          <div className={classNameX} id="layout">
-            <InitializeMeta
-              data={{ titleTemplate: `%s | ${data.websiteName}` }}
-            />
-            <UpdateTitle title="Official NVC Community in India" />
-            <WebsiteSchema data={websiteSchemaData} />
-            <OrganisationSchema data={organisationSchemaData} />
-            <Header isDesktop={matches} typeClass={typeClass} {...this.props} />
-            <main id="content" role="main" className={threeQuartersBlock}>
-              {children}
-            </main>
-            <Footer />
-            <Typekit kitId="pom2jme" />
-          </div>
+      <Fragment>
+        {client === true && (
+          <Fragment>
+            <br style={{ display: 'none' }} />
+            <MediaQuery minWidth={992}>
+              {matches => (
+                <div className={classNameX} id="layout">
+                  <InitializeMeta
+                    data={{ titleTemplate: `%s | ${data.websiteName}` }}
+                  />
+                  <UpdateTitle title="Official NVC Community in India" />
+                  <WebsiteSchema data={websiteSchemaData} />
+                  <OrganisationSchema data={organisationSchemaData} />
+                  {pathname !== '/' && (
+                    <Header
+                      isDesktop={matches}
+                      typeClass={typeClass}
+                      {...this.props}
+                    />
+                  )}
+                  <main
+                    id="content"
+                    role="main"
+                    className={
+                      pathname === '/'
+                        ? `${bleedBlock} 'home'`
+                        : `${threeQuartersBlock} not-home`
+                    }
+                  >
+                    {children}
+                  </main>
+                  {pathname !== '/' && <Footer />}
+                  <Typekit kitId="pom2jme" />
+                </div>
+              )}
+            </MediaQuery>
+            <br style={{ display: 'none' }} />
+          </Fragment>
         )}
-      </MediaQuery>
+        {client === false && (
+          <Fragment>
+            <div className={classNameX} id="layout">
+              <InitializeMeta
+                data={{ titleTemplate: `%s | ${data.websiteName}` }}
+              />
+              <UpdateTitle title="Official NVC Community in India" />
+              <WebsiteSchema data={websiteSchemaData} />
+              <OrganisationSchema data={organisationSchemaData} />
+              {pathname !== '/' && (
+                <Header isDesktop typeClass={typeClass} {...this.props} />
+              )}
+              <main
+                id="content"
+                role="main"
+                className={
+                  pathname === '/'
+                    ? `${bleedBlock} 'home'`
+                    : `${threeQuartersBlock} not-home`
+                }
+              >
+                {children}
+              </main>
+              {pathname !== '/' && <Footer />}
+              <Typekit kitId="pom2jme" />
+            </div>
+          </Fragment>
+        )}
+      </Fragment>
     )
   }
 }

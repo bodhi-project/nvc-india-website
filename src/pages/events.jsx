@@ -23,7 +23,7 @@ import '@bodhi-project/antrd/lib/wonky/3.16.2/calendar/style/css'
 // import Gallery from '@bodhi-project/components/lib/gatsby/Gallery'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
-// import Link from '../components/Link'
+import Link from '../components/Link'
 import StandardPage from '../components/wrappers/StandardPage'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
@@ -32,7 +32,7 @@ const pageData = {
   pageTitle: 'Events',
   nakedPageSlug: 'events',
   pageAbstract:
-    'We offer learning opportunities through practice groups on Nonviolent Communication. We are also available for individual coaching and mediation, and we are happy to consult with community-based projects that are seeking to shift paradigms.',
+    'In addition to NVC training events, we offer practice groups across the country. Join us to deepen your learning.',
 }
 
 // ----------------------------------------------------------------------------
@@ -78,20 +78,21 @@ const Page = props => {
           <div>
             <h2 className="mask-h3">Practice Groups</h2>
             <p>
-              We offer learning opportunities through practice groups on
-              Nonviolent Communication. We are also available for individual
-              coaching and mediation, and we are happy to consult with
-              community-based projects that are seeking to shift paradigms.
+              In addition to NVC training events, we offer practice groups
+              across the country. Join us to deepen your learning.
             </p>
             <h3 className="mask-h4">Auroville</h3>
             <p>
               Wednesdays: 4.30-6.30pm
               <br />
-              Contact L’aura
+              Contact L’aura:&nbsp;
+              <Link to="mailto:joylivinglearning@gmail.com">
+                joylivinglearning@gmail.com
+              </Link>
             </p>
             <h3 className="mask-h4">Bangalore</h3>
             <p>
-              Alternate Sundays: 9.30-11.30am
+              Sundays (alternate): 9.30-11.30am
               <br />
               Contact Ranjitha
             </p>

@@ -159,6 +159,8 @@ const Page = props => {
       <br />
       <br />
       <br />
+      <br />
+      <br />
       <Img
         fluid={props.data.pattern5.childImageSharp.fluid}
         style={{
