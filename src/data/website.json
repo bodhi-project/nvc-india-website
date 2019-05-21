@@ -1,12 +1,12 @@
 {
   "websiteName": "NVC-India",
   "websiteCreator": "Bodhi Project",
-  "websiteUrl": "https://starter.bodhiproject.org/",
-  "nakedWebsiteUrl": "https://starter.bodhiproject.org",
+  "websiteUrl": "https://www.nvc-india.org/",
+  "nakedWebsiteUrl": "https://www.nvc-india.org",
   "devUrl": "http://localhost:8000/",
   "nakedDevUrl": "http://localhost:8000",
-  "websiteKeywords": "GatsbyJS, React, Netlify",
-  "websiteDescription": "Launch Kit is an opionated GatsbyJS Starter kit.",
+  "websiteKeywords": "Nonviolent Communication, NVC, Restorative Justice, Nonviolence, Peace, Sociocracy, Internal Family System, IFS, Mediation, NVC, RC, NVC India, RC India, L'aura Joy",
+  "websiteDescription": "Spreading NVC across the subcontinent and beyond – Our NVC community in India is a thriving one, and it’s incredible to see how we’ve grown and how NVC has touched so many hundreds of people over the past several years.",
   "rssUrl": "/rss.xml",
   "org": {
     "name": "Joy Living Learning",
