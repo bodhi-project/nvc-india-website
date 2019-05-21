@@ -14,7 +14,6 @@ import isUndefined from 'lodash/isUndefined'
 import MediaQuery from 'react-responsive'
 import Typekit from 'react-typekit'
 import typefn from '@bodhi-project/typography/lib/methods/type'
-
 import {
   InitializeMeta,
   UpdateTitle,
@@ -80,7 +79,7 @@ const organisationSchemaData = {
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Page style
-const pageStyle = css({
+const style = css({
   '&#layout': {
     display: 'flex',
     flexDirection: 'column',
@@ -101,6 +100,8 @@ const pageStyle = css({
       paddingBottom: '1rem',
       flexGrow: 1,
       flexBasis: 0,
+      position: 'relative',
+      zIndex: 100,
 
       '& .copy': {
         maxWidth: '60rem',
@@ -129,6 +130,11 @@ const pageStyle = css({
     '& .desktop-only': {
       display: 'none',
     },
+  },
+
+  '& h1, h2, h3': {
+    color: '#e2620b',
+    textShadow: '0.03em 0.03em 0px #285BA1',
   },
 
   '& .shadow': {
@@ -167,8 +173,9 @@ const pageStyle = css({
       WebkitTextFillColor: 'transparent',
     },
   },
-})
-const pageStyles = pageStyle.toString()
+}).toString()
+
+const threeQuartersBlock = container({ threeQuarters: true, block: true })
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -190,6 +197,9 @@ class Layout extends React.Component {
     })
 
     this.state = {
+      defaultMediaQueryValues: isUndefined(window)
+        ? { width: 1440, height: 900 }
+        : {},
       typeClass,
     }
   }
@@ -218,15 +228,11 @@ class Layout extends React.Component {
   /** standard renderer */
   render() {
     const { children, className } = this.props
-    const { typeClass } = this.state
-    const threeQuartersBlock = container({ threeQuarters: true, block: true })
-    const classNameX = `${typeClass} ${pageStyles} ${className}`
+    const { typeClass, defaultMediaQueryValues } = this.state
+    const classNameX = `${typeClass} ${style} ${className}`
 
     return (
-      <MediaQuery
-        minWidth={992}
-        // values={{ width: 1440, height: 900, type: 'screen' }}
-      >
+      <MediaQuery minWidth={992} values={defaultMediaQueryValues}>
         {matches => (
           <div className={classNameX} id="layout">
             <InitializeMeta

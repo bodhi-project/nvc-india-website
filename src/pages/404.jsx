@@ -23,8 +23,7 @@ import StandardPage from '../components/wrappers/StandardPage'
 const pageData = {
   pageTitle: '404',
   nakedPageSlug: '',
-  pageAbstract: 'Page abstract.',
-  breadcrumbs: [{ title: 'Home', to: '/' }],
+  pageAbstract: 'Page not found!',
 }
 
 // ----------------------------------------------------------------------------
@@ -38,7 +37,7 @@ const pageData = {
 const Page = props => (
   <StandardPage className="" pageData={pageData} {...props}>
     <Division bigGolden>
-      <div>
+      <div className="copy">
         <h1>Page not found!</h1>
       </div>
       <div>2</div>

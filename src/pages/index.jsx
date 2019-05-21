@@ -10,17 +10,14 @@ import { graphql } from 'gatsby'
 import map from 'lodash/map'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
-import AnchorLink from 'react-anchor-link-smooth-scroll'
-
 import keygen from '@bodhi-project/components/lib/methods/keygen'
-import Image from '@bodhi-project/components/lib/Image'
 import Img from 'gatsby-image'
 
 import Division from '@bodhi-project/components/lib/Division'
 import '@bodhi-project/antrd/lib/wonky/3.16.2/row/style/css'
 import '@bodhi-project/antrd/lib/wonky/3.16.2/col/style/css'
 
-import Grid from '@bodhi-project/components/lib/gatsby-image/Grid'
+import Grid from '@bodhi-project/components/lib/gatsby/Grid'
 import '@bodhi-project/antrd/lib/wonky/3.16.2/card/style/css'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
@@ -28,11 +25,12 @@ import Link from '../components/Link'
 import HomePage from '../components/wrappers/HomePage'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-const { Fragment } = React
+// const { Fragment } = React
 const pageData = {
-  pageTitle: 'Homepage',
+  pageTitle: 'Official NVC Trainers Community in India',
   nakedPageSlug: '',
-  pageAbstract: 'Page abstract.',
+  pageAbstract:
+    'Spreading NVC across the subcontinent and beyond – Our NVC community in India is a thriving one, and it’s incredible to see how we’ve grown and how NVC has touched so many hundreds of people over the past several years.',
 }
 
 /** toDegrees */
@@ -40,29 +38,29 @@ const toDegrees = angle => angle * (Math.PI / 180)
 
 const menu = [
   {
-    title: 'About',
-    link: '#about',
-    symbol: 'about',
-  },
-  {
-    title: 'Certified Trainers',
-    link: '#certified-trainers',
-    symbol: 'certifiedTrainers',
+    title: 'Contact',
+    link: '/contact-us',
+    symbol: 'contactUs',
   },
   {
     title: 'Certification Weave',
-    link: '#certification-weave',
+    link: '/certification-weave',
     symbol: 'certificationWeave',
   },
   {
     title: 'Events',
-    link: '#events',
+    link: '/events',
     symbol: 'events',
   },
   {
-    title: 'Contact Us',
-    link: '#contact-us',
-    symbol: 'contactUs',
+    title: 'Certified Trainers',
+    link: '/certified-trainers',
+    symbol: 'certifiedTrainers',
+  },
+  {
+    title: 'About',
+    link: '/about',
+    symbol: 'about',
   },
 ]
 
@@ -77,7 +75,7 @@ export const query = graphql`
     background: file(relativePath: { eq: "background.jpg" }) {
       ...defaultImage
     }
-    banner: file(relativePath: { eq: "banner.jpg" }) {
+    banner: file(relativePath: { eq: "banner.png" }) {
       ...defaultImage
     }
     event1: file(relativePath: { eq: "event1.jpeg" }) {
@@ -123,13 +121,32 @@ export const query = graphql`
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
 const style = css({
+  '& .parent-carrier': {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    top: 0,
+    left: 0,
+    width: '100%',
+    paddingTop: 75,
+    zIndex: 100,
+    position: 'absolute',
+  },
+
+  '& .parent-circle': {
+    width: 550,
+    height: 550,
+    borderRadius: '50%',
+    position: 'relative',
+  },
+
   '& .child-circle': {
-    width: 100,
-    height: 100,
+    width: 110,
+    height: 110,
     borderRadius: '50%',
     position: 'absolute',
-    left: 187.5,
-    top: 187.5,
+    left: 220,
+    top: 200,
     // transition: 'all 300ms ease-in',
     cursor: 'pointer',
     display: 'block',
@@ -137,12 +154,23 @@ const style = css({
     '&::after': {
       content: `attr(data-text)`,
       fontWeight: 500,
-      fontSize: '16px',
+      fontSize: '14px',
       color: '#e15700',
-      width: 100,
+      width: 110,
       textAlign: 'center',
       position: 'absolute',
       fontFamily: 'baileywick-jf-gothic, sans-serif',
+    },
+
+    '&.small': {
+      width: 90,
+      height: 90,
+      left: 220,
+      top: 200,
+
+      '&::after': {
+        width: 90,
+      },
     },
   },
 
@@ -192,7 +220,7 @@ class Page extends React.Component {
     // //Number of services
     const noOfServices = 8
     //   //Half width of parent
-    const parentCircleHalfWidth = 250
+    const parentCircleHalfWidth = 220
     //   //Add some padding from parent circle
     const Hyp = parentCircleHalfWidth - 0
     //   //360 degrees / the number of services
@@ -246,6 +274,14 @@ class Page extends React.Component {
         title: 'Sudha Something',
         cover: this.props.data.portrait.childImageSharp.fluid,
       },
+      {
+        title: 'Sudha Something',
+        cover: this.props.data.portrait.childImageSharp.fluid,
+      },
+      {
+        title: 'Sudha Something',
+        cover: this.props.data.portrait.childImageSharp.fluid,
+      },
     ]
 
     const blobs = [
@@ -275,56 +311,24 @@ class Page extends React.Component {
           className="desktop-only"
         >
           <Img fluid={this.props.data.banner.childImageSharp.fluid} />
-          <div
-            style={{
-              top: 0,
-              left: 0,
-              width: '100%',
-              paddingTop: '15%',
-              zIndex: 20,
-              position: 'absolute',
-              display: 'flex',
-              alignItems: 'flex-end',
-            }}
-          >
-            <Img
-              fluid={this.props.data.giraffe.childImageSharp.fluid}
-              // title="Deepa Dogra, Principal, Cambridge International School"
-              // alt="Deepa Dogra, Principal, Cambridge International School"
-              style={{
-                width: '25%',
-                margin: 'auto',
-              }}
-            />
-          </div>
-          <div
-            className="parent-carrier"
-            style={{
-              top: 0,
-              left: 0,
-              width: '100%',
-              paddingTop: '7.5%',
-              zIndex: 100,
-              position: 'absolute',
-            }}
-          >
+          <div className="parent-carrier">
             <div
               className="parent-circle"
               ref="parent"
               style={{ border: '2px solid transparent' }}
             >
               <div ref="child1" />
-              {map(menu, ({ show, symbol, title, link }, index) => (
+              {map(menu, ({ symbol, title, link, size = 'default' }, index) => (
                 <div
-                  className={`child-circle child${index + 2}`}
+                  className={`child-circle ${size} child${index + 2}`}
                   ref={`child${index + 2}`}
                   data-text={title}
                 >
-                  <AnchorLink href={link} key={keygen()}>
+                  <Link to={link} key={keygen()}>
                     <Img
                       fluid={this.props.data[symbol].childImageSharp.fluid}
                     />
-                  </AnchorLink>
+                  </Link>
                 </div>
               ))}
               <div ref="child7" />
@@ -368,24 +372,27 @@ class Page extends React.Component {
           >
             <h2
               className="shadow"
-              data-shadow="Certification Weave"
-              id="certification-weave"
+              data-shadow="Certified Trainers"
+              id="certified-trainers"
             >
-              Certification Weave
+              Certified Trainers
             </h2>
             <div className="mask-p trainers">
-              <Grid events={blobs} Img={Img} Link={Link} />
+              <Grid
+                events={trainers}
+                Img={Img}
+                Link={Link}
+                columnWidth="25%"
+                gutterWidth={4}
+                gutterHeight={4}
+              />
             </div>
             <p className="copy" style={{ marginBottom: 0 }}>
               Alice's Adventures in Wonderland (commonly shortened to Alice in
               Wonderland) is an 1865 novel written by English author Charles
-              Lutwidge Dodgson under the pseudonym Lewis Carroll. It tells of a
-              girl named Alice falling through a rabbit hole into a fantasy
-              world populated by peculiar, anthropomorphic creatures. The tale
-              plays with logic, giving the story lasting popularity with adults
-              as well as with children.
+              Lutwidge Dodgson under the pseudonym Lewis Carroll.
               <br />
-              <Link to="/certification-weave">Read more ⇝</Link>
+              <Link to="/certified-trainers">Read more ⇝</Link>
             </p>
           </div>
           <div
@@ -399,27 +406,21 @@ class Page extends React.Component {
           >
             <h2
               className="shadow"
-              data-shadow="Certified Trainers"
-              id="certified-trainers"
+              data-shadow="Certification Weave"
+              id="certification-weave"
             >
-              Certified Trainers
+              Certification Weave
             </h2>
-            <div className="mask-p trainers">
-              <Grid
-                events={trainers}
-                Img={Img}
-                Link={Link}
-                columnWidth="50%"
-                gutterWidth={4}
-                gutterHeight={4}
-              />
-            </div>
             <p className="copy" style={{ marginBottom: 0 }}>
               Alice's Adventures in Wonderland (commonly shortened to Alice in
               Wonderland) is an 1865 novel written by English author Charles
-              Lutwidge Dodgson under the pseudonym Lewis Carroll.
+              Lutwidge Dodgson under the pseudonym Lewis Carroll. It tells of a
+              girl named Alice falling through a rabbit hole into a fantasy
+              world populated by peculiar, anthropomorphic creatures. The tale
+              plays with logic, giving the story lasting popularity with adults
+              as well as with children.
               <br />
-              <Link to="/certified-trainers">Read more ⇝</Link>
+              <Link to="/certification-weave">Read more ⇝</Link>
             </p>
           </div>
         </Division>

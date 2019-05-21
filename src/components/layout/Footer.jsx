@@ -49,19 +49,32 @@ const style = css({
   paddingLeft: '1rem',
 
   paddingRight: '1rem',
+  '& p.mandate': {
+    textAlign: 'center',
+    color: '#285BA1',
+    textShadow: '0.03em 0.03em 0 #e2620b',
+    paddingTop: 20,
+    paddingBottom: 20,
+    marginTop: '0px !important',
+    marginBottom: '0px !important',
+  },
+
   '& p.quote': {
     textAlign: 'center',
-    paddingTop: 20,
+    marginTop: '0px !important',
+    marginBottom: '0px !important',
+    paddingBottom: 20,
   },
 
   '& p.copyright': {
     textAlign: 'center',
+    marginTop: '0px !important',
     marginBottom: '0px !important',
     paddingBottom: 20,
     lineHeight: 1,
 
     '& span': {
-      fontSize: '80%',
+      fontSize: '90%',
     },
   },
 }).toString()
@@ -82,6 +95,9 @@ const Footer = props => {
 
   return (
     <footer className={`${threeQuartersBlock} ${style}`}>
+      <p className="mandate copy mask-h4">
+        <span>…spreading NVC across the subcontinent and beyond…</span>
+      </p>
       <p className="quote copy">
         {isString(quote) && (
           <Fragment>
@@ -104,7 +120,7 @@ const Footer = props => {
         )}
         <br />~ {author}
       </p>
-      <p className="copyright">
+      <p className="copyright copy">
         <span>
           Made with&nbsp;
           <Icon type="heart" theme="filled" style={{ color: '#ff6961' }} />

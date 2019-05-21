@@ -6,11 +6,11 @@
     "link": "/certified-trainers",
     "mobileOnly": false
   },
+  { "title": "Events", "link": "/events", "mobileOnly": false },
   {
     "title": "Certification Weave",
     "link": "/certification-weave",
     "mobileOnly": false
   },
-  { "title": "Events", "link": "/events", "mobileOnly": false },
-  { "title": "Contact Us", "link": "/contact-us", "mobileOnly": false }
+  { "title": "Contact", "link": "/contact-us", "mobileOnly": false }
 ]

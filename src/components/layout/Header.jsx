@@ -279,8 +279,8 @@ class Header extends React.Component {
         {isDesktop === true && (
           <div className="desktop-header">
             <Link to="/" title="Home">
-              <h1 className="shadow" data-shadow="NVC India">
-                <span>NVC India</span>
+              <h1 className="shadow" data-shadow="NVC-India">
+                <span>NVC-India</span>
               </h1>
             </Link>
             <nav>

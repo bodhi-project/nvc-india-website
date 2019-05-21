@@ -22,7 +22,10 @@ const { Fragment } = React
 // ----------------------------------------------------------------------------
 /** Link */
 const Link = ({ to, children, ...props }) => {
-  const isOutLink = startsWith(to, 'http') || startsWith(to, 'https')
+  const isOutLink =
+    startsWith(to, 'http') ||
+    startsWith(to, 'https') ||
+    startsWith(to, 'mailto')
   const isHashLink = startsWith(to, '#') || isUndefined(to)
 
   return (

@@ -1,5 +1,5 @@
 {
-  "websiteName": "NVC India",
+  "websiteName": "NVC-India",
   "websiteCreator": "Bodhi Project",
   "websiteUrl": "https://starter.bodhiproject.org/",
   "nakedWebsiteUrl": "https://starter.bodhiproject.org",
@@ -9,33 +9,30 @@
   "websiteDescription": "Launch Kit is an opionated GatsbyJS Starter kit.",
   "rssUrl": "/rss.xml",
   "org": {
-    "name": "Bodhi Project",
-    "legalName": "Bodhi Project Inc.",
-    "url": "https://www.bodhiproject.org",
+    "name": "Joy Living Learning",
+    "legalName": "Auroville Foundation",
+    "url": "http://joylivinglearning.org",
     "logo": "/logo.png",
-    "foundingDate": "2017-01-01",
-    "founders": ["Pranav Kumar", "Brijesh Kumar", "Mangal Varshney"]
+    "foundingDate": "2008-01-01",
+    "founders": ["L'aura Joy"]
   },
   "orgLocation": {
-    "streetAddress": "Street #123",
-    "addressLocality": "Kotagiri",
-    "addressRegion": "Tamil Nadu",
-    "postalCode": "643217",
+    "streetAddress": "House #1",
+    "addressLocality": "Center Field",
+    "addressRegion": "Auroville",
+    "postalCode": "605101",
     "addressCountry": "India",
-    "locationName": "Kotagiri",
-    "locationUrl": "https://en.wikipedia.org/wiki/Kotagiri"
+    "locationName": "Auroville",
+    "locationUrl": "https://en.wikipedia.org/wiki/Auroville"
   },
   "orgContact": {
-    "email": "hello@bodhiproject.org",
-    "telephone": ["na"]
+    "email": "joylivinglearning@gmail.com",
+    "telephone": ["+914132622539"]
   },
-  "orgSocialMediaProfiles": [
-    "http://instagram.com/bodhisystems",
-    "https://twitter.com/_dmi_systems"
-  ],
+  "orgSocialMediaProfiles": ["http://www.facebook.com/JoyLivingLearning"],
   "pathPrefix": "/",
   "copyright": "Copyright © 2018 Bodhi Project",
-  "googleAnalyticsID": "UA-109854711-9",
+  "googleAnalyticsID": "UA-109854711-11",
   "googleAnalyticsViewID": "182889144",
   "app": {
     "projectContext": "QKBp9oMLbyHKY63uf"
