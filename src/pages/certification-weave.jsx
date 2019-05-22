@@ -108,6 +108,7 @@ const Page = props => (
         </div>
       </div>
       <div>
+        <br className="mobile-only" />
         <h2 className="mask-h3">From our events…</h2>
         <Gallery
           data={props.data}

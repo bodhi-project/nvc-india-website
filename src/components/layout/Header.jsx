@@ -137,26 +137,26 @@ const style = css({
 
       '& .ant-menu-item': {
         borderBottom: 'unset !important',
-        padding: '0 0.5rem',
+        padding: '0 0.3rem',
 
         '@media(min-width: 992px)': {
-          padding: '0 0.5rem',
+          padding: '0 0.4rem',
         },
 
         '@media(min-width: 1092px)': {
-          padding: '0 0.7rem',
+          padding: '0 0.5rem',
         },
 
         '@media(min-width: 1192px)': {
-          padding: '0 0.85rem',
+          padding: '0 0.6rem',
         },
 
         '@media(min-width: 1292px)': {
-          padding: '0 1rem',
+          padding: '0 0.7rem',
         },
 
         '@media(min-width: 1400px)': {
-          padding: '0 1.2rem',
+          padding: '0 0.8rem',
         },
 
         '& > a': {

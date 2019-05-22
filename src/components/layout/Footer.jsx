@@ -127,7 +127,7 @@ const Footer = props => {
           &nbsp;by&nbsp;
           <Link to="https://www.bodhiproject.org/">Bodhi Project</Link>
           <br style={{ marginTop: -10 }} />
-          Copyright © 2019 NVC India
+          Copyright © 2019 NVC-India
         </span>
       </p>
     </footer>
