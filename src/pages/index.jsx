@@ -74,6 +74,9 @@ export const query = graphql`
     banner: file(relativePath: { eq: "banner.png" }) {
       ...defaultImage
     }
+    mobileBanner: file(relativePath: { eq: "banner-mobile.png" }) {
+      ...defaultImage
+    }
     certifiedTrainers: file(relativePath: { eq: "certified-trainers.png" }) {
       ...defaultImage
     }
@@ -153,10 +156,17 @@ const style = css({
     borderRadius: '50%',
     position: 'absolute',
     left: 270,
-    top: 270,
     transition: 'all 300ms ease-in',
     cursor: 'pointer',
     display: 'block',
+
+    '@media(min-height: 800px)': {
+      top: 270,
+    },
+
+    '@media(max-height: 800px)': {
+      top: 320,
+    },
 
     '&::after': {
       content: `attr(data-text)`,
@@ -232,7 +242,7 @@ class Page extends React.Component {
     // //Number of services
     const noOfServices = 8
     //   //Half width of parent
-    const parentCircleHalfWidth = 360
+    const parentCircleHalfWidth = 300
     //   //Add some padding from parent circle
     const Hyp = parentCircleHalfWidth - 0
     //   //360 degrees / the number of services
@@ -271,6 +281,19 @@ class Page extends React.Component {
               left: 0,
               zIndex: 10,
             }}
+            className="desktop-only"
+          />
+          <Img
+            fluid={this.props.data.mobileBanner.childImageSharp.fluid}
+            style={{
+              position: 'absolute',
+              height: '100vh',
+              width: '100%',
+              top: 0,
+              left: 0,
+              zIndex: 10,
+            }}
+            className="mobile-only"
           />
           <div
             style={{
@@ -285,7 +308,7 @@ class Page extends React.Component {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'flex-end',
-              paddingBottom: '25vh',
+              paddingBottom: '12vh',
             }}
           >
             <div>
