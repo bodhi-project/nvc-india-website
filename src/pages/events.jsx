@@ -97,7 +97,7 @@ const eventsData = [
   },
   {
     id: 3,
-    title: 'IIT in India',
+    title: 'International Intensive Training',
     allDay: true,
     start: new Date(2020, 0, 17),
     end: new Date(2020, 0, 26),
