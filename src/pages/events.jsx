@@ -60,8 +60,8 @@ const eventsData = [
     id: 0,
     title: 'Connection as Life Energy – NVC Level 1 (Auroville)',
     allDay: true,
-    start: new Date(2019, 7, 8),
-    end: new Date(2019, 7, 10),
+    start: new Date(2019, 7, 3),
+    end: new Date(2019, 7, 5),
     resource: {
       abstract:
         'A path of Nonviolence offers both a deeply-rooted consciousness of oneness, as well as very practical tools to live this more and more in our daily lives.',
