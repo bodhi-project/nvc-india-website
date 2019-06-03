@@ -39,6 +39,9 @@ export const query = graphql`
     laura: file(relativePath: { eq: "laura.png" }) {
       ...defaultImage
     }
+    ranjitha: file(relativePath: { eq: "ranjitha.png" }) {
+      ...defaultImage
+    }
     pattern4: file(relativePath: { eq: "patterns/pattern4.png" }) {
       ...defaultImage
     }
@@ -142,10 +145,21 @@ const Page = props => (
           </div>
         </Division>
         <Division threeQuartersAlt style={{ marginBottom: 20 }}>
-          <div>&nbsp;</div>
+          <div>
+            <Img
+              fluid={props.data.ranjitha.childImageSharp.fluid}
+              className="responsive-image"
+            />
+          </div>
           <div>
             <h2 className="mask-h3 move-up">Ranjitha Jeurkar</h2>
-            <p>Coming soon…</p>
+            <p>
+              Ranjitha Jeurkar has several years of experience in the media and
+              communications industry. She brings her understanding from these
+              experiences into the work she does with individuals, groups and
+              organizations. Ranjitha is a Certified Trainer with the Center for
+              Nonviolent Communication.
+            </p>
           </div>
         </Division>
         <Division threeQuartersAlt style={{ marginBottom: 20 }}>
