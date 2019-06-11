@@ -4,7 +4,7 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Libraries
 import React from 'react'
 // import PropTypes from 'prop-types'
-// import { css } from "glamor";
+import { css } from 'glamor'
 import { graphql } from 'gatsby'
 
 // import isUndefined from 'lodash/isUndefined'
@@ -74,6 +74,14 @@ export const query = graphql`
 // ----------------------------------------------------------------------------
 // --------------------------------------------------------------------- Styles
 // ----------------------------------------------------------------------------
+const formStyle = css({
+  '& .has-error .ant-input': {
+    borderColor: '#b40000',
+  },
+  '& .has-error .ant-form-explain': {
+    color: '#b40000',
+  },
+}).toString()
 
 // ----------------------------------------------------------------------------
 // ------------------------------------------------------------------ Component
@@ -84,7 +92,20 @@ const Page = props => (
     <Division bigGolden>
       <div className="copy">
         <h1>Contact Us</h1>
-        <GoogleContactForm postUrl="https://script.google.com/macros/s/AKfycbxpYSUkW6Dc8gNuWU7o3Pln_bCcp6OsHcQnLgzUWjZoiOo8tEJt/exec" />
+        <GoogleContactForm
+          postUrl="https://script.google.com/macros/s/AKfycbxpYSUkW6Dc8gNuWU7o3Pln_bCcp6OsHcQnLgzUWjZoiOo8tEJt/exec"
+          texts={{
+            name: { title: 'Name' },
+            email: { title: 'Email' },
+            comment: { title: 'Your questions / comments' },
+          }}
+          includePlaceholders={false}
+          responses={{
+            formSent:
+              "Thank you for contacting us. We'll get back to you shortly.",
+          }}
+          className={formStyle}
+        />
       </div>
       <div>
         <div style={{ position: 'relative', width: '100%' }}>
