@@ -11,7 +11,7 @@ import isUndefined from 'lodash/isUndefined'
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Components
 import { Link as GatsbyLink } from 'gatsby'
 
-import OutLink from '@bodhi-project/components/lib/OutLink'
+import OutLink from '@bodhi-project/components/lib/Outlink'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Locals
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
