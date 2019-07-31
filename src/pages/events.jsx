@@ -220,6 +220,8 @@ const Page = props => {
                     style={{
                       height,
                       width,
+                      paddingBottom: 45,
+                      marginBottom: 12
                     }}
                   >
                     <BigCalendar
