@@ -39,6 +39,9 @@ export const query = graphql`
     laura: file(relativePath: { eq: "laura.png" }) {
       ...defaultImage
     }
+    sudha: file(relativePath: { eq: "sudha.jpg" }) {
+      ...defaultImage
+    }
     ranjitha: file(relativePath: { eq: "ranjitha.png" }) {
       ...defaultImage
     }
@@ -170,7 +173,12 @@ const Page = props => (
           </div>
         </Division>
         <Division threeQuartersAlt style={{ marginBottom: 20 }}>
-          <div>&nbsp;</div>
+          <div>
+            <Img
+              fluid={props.data.sudha.childImageSharp.fluid}
+              className="responsive-image"
+            />
+          </div>
           <div>
             <h2 className="mask-h3 move-up">Sudha Shankar</h2>
             <p>Coming soon…</p>
