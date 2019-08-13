@@ -103,11 +103,9 @@ const eventsData = [
     end: new Date(2020, 0, 27),
     resource: {
       abstract:
-        'International Intensive Training (Kerala) – Fri, January 17 - Sun, January 26, 2020, 9am - 5pm.',
+        'International Intensive Training (Kerala) – Fri, January 17 - Sun, January 26, 2020, 9am - 5pm. For more details contact: iitindia2020@gmail.com',
       cover:
         'https://www.joylivinglearning.org/content-assets/2020-events/iitNew_1440X900.jpg',
-      link:
-        'https://www.joylivinglearning.org/events/featured/2020/international-intensive-training',
     },
   },
 ]
