@@ -35,7 +35,7 @@ import Link from '../components/Link'
 import StandardPage from '../components/wrappers/StandardPage'
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Abstractions
-// const { Fragment } = React
+const { Fragment } = React
 const pageData = {
   pageTitle: 'Events',
   nakedPageSlug: 'events',
@@ -100,12 +100,12 @@ const eventsData = [
     title: 'International Intensive Training',
     allDay: true,
     start: new Date(2020, 0, 17),
-    end: new Date(2020, 0, 26),
+    end: new Date(2020, 0, 27),
     resource: {
       abstract:
-        'Announcing an upcoming IIT in India. More details coming soon…',
-      link:
-        'https://www.facebook.com/photo.php?fbid=10219614493577953&set=gm.3317628828262876&type=3&theater&ifg=1',
+        'International Intensive Training (Kerala) – Fri, January 17 - Sun, January 26, 2020, 9am - 5pm.',
+      cover:
+        'https://www.joylivinglearning.org/content-assets/2020-events/iitNew_1440X900.jpg',
     },
   },
 ]
@@ -146,8 +146,10 @@ const Page = props => {
    */
   const goTo = event => {
     if (!isUndefined(window)) {
-      const tab = window.open(event.resource.link, '_blank')
-      tab.focus()
+      if (!isUndefined(event.resource.link)) {
+        const tab = window.open(event.resource.link, '_blank')
+        tab.focus()
+      }
     }
   }
 
@@ -167,6 +169,16 @@ const Page = props => {
           <Popover
             content={
               <div className={`${typeClass} ${style} popup`}>
+                {!isUndefined(data.event.resource.cover) && (
+                  <Fragment>
+                    <Image
+                      src={data.cover}
+                      rawWidth={1440}
+                      rawHeight={900}
+                      style={{ width: '100%', height: 'auto' }}
+                    />
+                  </Fragment>
+                )}
                 <p
                   style={{
                     marginBottom: 0,
@@ -177,10 +189,14 @@ const Page = props => {
                     <strong>{data.title}</strong>
                     <br />
                     {data.event.resource.abstract}
-                    <br />
-                    <i style={{ color: '#285BA1' }}>
-                      Click for more information…
-                    </i>
+                    {!isUndefined(data.event.resource.link) && (
+                      <Fragment>
+                        <br />
+                        <i style={{ color: '#285BA1' }}>
+                          Click for more information…
+                        </i>
+                      </Fragment>
+                    )}
                   </span>
                 </p>
               </div>
@@ -221,7 +237,7 @@ const Page = props => {
                       height,
                       width,
                       paddingBottom: 45,
-                      marginBottom: 12
+                      marginBottom: 12,
                     }}
                   >
                     <BigCalendar
