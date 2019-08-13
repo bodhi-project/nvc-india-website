@@ -106,6 +106,8 @@ const eventsData = [
         'International Intensive Training (Kerala) – Fri, January 17 - Sun, January 26, 2020, 9am - 5pm.',
       cover:
         'https://www.joylivinglearning.org/content-assets/2020-events/iitNew_1440X900.jpg',
+      link:
+        'https://www.joylivinglearning.org/events/featured/2020/international-intensive-training',
     },
   },
 ]
@@ -175,7 +177,9 @@ const Page = props => {
                       src={data.cover}
                       rawWidth={1440}
                       rawHeight={900}
-                      style={{ width: '100%', height: 'auto' }}
+                      loader="gradient"
+                      gradientPreset="default"
+                      className="mask-p"
                     />
                   </Fragment>
                 )}
