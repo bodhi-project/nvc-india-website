@@ -174,7 +174,7 @@ const Page = props => {
                 {!isUndefined(data.event.resource.cover) && (
                   <Fragment>
                     <Image
-                      src={data.cover}
+                      src={data.event.resource.cover}
                       rawWidth={1440}
                       rawHeight={900}
                       loader="gradient"
