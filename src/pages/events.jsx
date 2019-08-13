@@ -178,6 +178,7 @@ const Page = props => {
                       loader="gradient"
                       gradientPreset="default"
                       className="mask-p"
+                      style={{ width: '100%', height: 'auto' }}
                     />
                   </Fragment>
                 )}
