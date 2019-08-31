@@ -108,6 +108,19 @@ const eventsData = [
         'https://www.joylivinglearning.org/content-assets/2020-events/iitNew_1440X900.jpg',
     },
   },
+  {
+    id: 4,
+    title: 'Connection as Life Energy – NVC Level 1 (Mumbai)',
+    allDay: true,
+    start: new Date(2019, 9, 12),
+    end: new Date(2019, 9, 13),
+    resource: {
+      abstract:
+        'A path of Nonviolence offers both a deeply-rooted consciousness of oneness, as well as very practical tools to live this more and more in our daily lives. In re-evaluating some of our habitual and conditioned thinking, we see how much of it is life-alienating and based on a culture of scarcity and separation. We’ll learn the skills to be able express ourselves with more clarity and to hear others’ true (and harmless) message, which in turn leads to more connection between us. When we’re connected as human beings, we’re in our natural state of wanting to give and collaborate with others.',
+      cover:
+        'https://www.joylivinglearning.org/content-assets/2018-events/nvc-mumbai.jpeg',
+    },
+  },
 ]
 
 // ----------------------------------------------------------------------------
