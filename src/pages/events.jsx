@@ -123,6 +123,22 @@ const eventsData = [
         'https://www.joylivinglearning.org/events/featured/2019/oct/connection-as-life-energy',
     },
   },
+  {
+    id: 5,
+    title: 'Building Bridges: Enriching Connections (New Delhi)',
+    allDay: true,
+    start: new Date(2019, 8, 14),
+    end: new Date(2019, 8, 16),
+    resource: {
+      abstract:
+        "A Nonviolent Communication Workshop – this workshop is ideal for anyone looking for a breakthrough in a relationship with friends, family, co-workers, clients or one's own self.",
+      cover: '/assets/building-bridges.jpeg',
+      coverDimensions: {
+        width: 900,
+        height: 1280,
+      },
+    },
+  },
 ]
 
 // ----------------------------------------------------------------------------
@@ -188,12 +204,20 @@ const Page = props => {
                   <Fragment>
                     <Image
                       src={data.event.resource.cover}
-                      rawWidth={1440}
-                      rawHeight={900}
+                      rawWidth={
+                        !isUndefined(data.event.resource.coverDimensions)
+                          ? data.event.resource.coverDimensions.width
+                          : 1440
+                      }
+                      rawHeight={
+                        !isUndefined(data.event.resource.coverDimensions)
+                          ? data.event.resource.coverDimensions.height
+                          : 900
+                      }
                       loader="gradient"
                       gradientPreset="default"
                       className="mask-p"
-                      style={{ width: '100%', height: 155 }}
+                      style={{ width: '100%', minHeight: 155, height: 'auto' }}
                     />
                   </Fragment>
                 )}
