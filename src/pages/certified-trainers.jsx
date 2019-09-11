@@ -181,7 +181,25 @@ const Page = props => (
           </div>
           <div>
             <h2 className="mask-h3 move-up">Sudha Shankar</h2>
-            <p>Coming soon…</p>
+            <p>
+              Sudha Shankar has been working in the areas of communication and
+              healing; she has experience in teaching in schools; has been an
+              editor in national and international organizations; practises
+              hypnotherapy and uses energy healing methods, to help bring about
+              wholeness and wellness.
+            </p>
+            <p>
+              Straddling both these worlds – communication and healing – is
+              Nonviolent Communication (NVC). She is a Certified Trainer in NVC
+              with the Center for Nonviolent Communication and her passion is to
+              share NVC and attempt to live the consciousness from moment to
+              moment. She is convinced that this compassionate approach to
+              connecting with oneself and interacting with the outside world is
+              also a process that can bring about deep healing, awareness,
+              understanding and change. She uses NVC in her clinical work, NGOs,
+              schools and universities. She has conducted NVC trainings in
+              several cities in India, as well as in Bangladesh and Nepal.
+            </p>
           </div>
         </Division>
       </div>
