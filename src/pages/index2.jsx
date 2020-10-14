@@ -260,7 +260,127 @@ class Page extends React.Component {
 
   /** standard renderer */
   render() {
-    return <div>&nbsp;</div>
+    return (
+      <HomePage pageData={pageData} {...this.props} className={style}>
+        <div
+          style={{
+            background: '#fef5ee',
+            boxShadow: '1px 1px 4px #FFD0A9',
+            position: 'relative',
+            marginBottom: 20,
+            zIndex: -1,
+          }}
+        >
+          <Img
+            fluid={this.props.data.banner.childImageSharp.fluid}
+            style={{
+              position: 'absolute',
+              height: '100vh',
+              width: '100%',
+              top: 0,
+              left: 0,
+              zIndex: 10,
+            }}
+            className="desktop-only"
+          />
+          <Img
+            fluid={this.props.data.mobileBanner.childImageSharp.fluid}
+            style={{
+              position: 'absolute',
+              height: '100vh',
+              width: '100%',
+              top: 0,
+              left: 0,
+              zIndex: 10,
+            }}
+            className="mobile-only"
+          />
+          <div
+            style={{
+              zIndex: 90,
+              position: 'absolute',
+              height: '100vh',
+              width: '100%',
+              top: 0,
+              left: 0,
+              background: 'transparent',
+              textAlign: 'center',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'flex-end',
+              paddingBottom: '12vh',
+            }}
+          >
+            <div>
+              <h1 style={{ marginBottom: 4, marginTop: -10 }}>
+                <span>NVC-India</span>
+              </h1>
+              <h2
+                style={{
+                  marginBottom: 0,
+                  color: '#c84e00',
+                }}
+              >
+                <span>Certified NVC Trainers in India</span>
+              </h2>
+            </div>
+          </div>
+          <div className="desktop-only" style={{ zIndex: 100 }}>
+            <div className="parent-carrier">
+              <div className="parent-circle" ref="parent">
+                <div ref="child1" />
+                {map(
+                  menu,
+                  ({ symbol, title, link, size = 'default' }, index) => (
+                    <div
+                      className={`child-circle ${size} child${index + 2}`}
+                      ref={`child${index + 2}`}
+                      data-text={title}
+                    >
+                      <Link to={link} key={keygen()}>
+                        <Img
+                          fluid={this.props.data[symbol].childImageSharp.fluid}
+                        />
+                      </Link>
+                    </div>
+                  )
+                )}
+                <div ref="child7" />
+                <div ref="child8" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="mobile-only"
+          style={{ zIndex: 100, width: '40%', margin: 'auto' }}
+        >
+          <Link to="/about">
+            <Img fluid={this.props.data.mobileAbout.childImageSharp.fluid} />
+          </Link>
+          <Link to="/certified-trainers">
+            <Img
+              fluid={
+                this.props.data.mobileCertifiedTrainers.childImageSharp.fluid
+              }
+            />
+          </Link>
+          <Link to="/events">
+            <Img fluid={this.props.data.mobileEvents.childImageSharp.fluid} />
+          </Link>
+          <Link to="/certification-weave">
+            <Img
+              fluid={
+                this.props.data.mobileCertificationWeave.childImageSharp.fluid
+              }
+            />
+          </Link>
+          <Link to="/contact-us">
+            <Img fluid={this.props.data.mobileContact.childImageSharp.fluid} />
+          </Link>
+        </div>
+      </HomePage>
+    )
   }
 }
 
